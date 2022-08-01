@@ -2,12 +2,14 @@ package com.tms;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-public class TmsapiApplication {
+@ComponentScan("com.tms")
+public class TmsAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(TmsapiApplication.class, args);
+		SpringApplication.run(TmsAppApplication.class, args);
 	}
 
 }

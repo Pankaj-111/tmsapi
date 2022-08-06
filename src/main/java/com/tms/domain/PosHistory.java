@@ -6,30 +6,34 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
 @Entity
+@Table(name="POS_HISTORY")
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
 @ToString
-public class Pos {
+@EqualsAndHashCode
+@NoArgsConstructor
+public class PosHistory {
 	
 	@Id
 	@GeneratedValue
-	private Integer id;
+	private Long id;
 	
-	@Column(name="SERIAL_ID")
-	private String serialId;
+	@Column(name="POS_ID")
+	private String posId;
 	
-	@Column(name="POS_DESCRIPTION")
-	private String posDescritpion;
+	@Column(name="USER_ID")
+	private String userId;
 	
 	@Column(name="CREATEDATE")
 	private LocalDateTime createdDate;
@@ -38,9 +42,6 @@ public class Pos {
 	private Integer createdBy;
 	
 	@Column(name="MODIDATE")
-	private LocalDateTime modifiedDate;
-	
-	@Column(name="ISACTIVE")
-	private char isActive;	
-	
+	private LocalDateTime modifiedDate;	
+
 }
